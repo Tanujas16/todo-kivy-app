@@ -1,0 +1,31 @@
+<MainScreen>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: input_box
+        hint_text: "Type a task"
+        multiline: False
+        size_hint_y: None
+        height: 40
+
+    BoxLayout:
+        size_hint_y: None
+        height: 40
+        spacing: 10
+
+        Button:
+            text: "Add"
+            on_press: app.add_item()
+
+        Button:
+            text: "Clear All"
+            on_press: app.clear_all()
+
+    ScrollView:
+        BoxLayout:
+            id: item_box
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height
